@@ -41,18 +41,18 @@ jobs:
     - name: Archive test artifacts
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: testresults
+        name: testresults-${{ matrix.node-version }}
         path: |
           test-results
     - name: Archive merged report
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: merged-test-results
+        name: merged-test-results-${{ matrix.node-version }}
         path: merged-test-results.xml
     - name: Archive code coverage results
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: code-coverage
+        name: code-coverage-${{ matrix.node-version }}
         path: coverage
     - name: Basic Test Results
       uses: codecov/basic-test-results@main   
