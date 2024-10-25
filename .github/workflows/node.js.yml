@@ -35,19 +35,19 @@ jobs:
         mkdir -p test-results/junit
         bin/junit-merge test-results.xml test/fixtures/3.xml
         cp test-results.xml test-results/junit/
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v4
+    - name: Archive test artifacts
+      uses: actions/upload-artifact@v4.4.3
       with:
         name: test-results
         path: |
           test-results
     - name: Archive merged report
-      uses: actions/upload-artifact@4
+      uses: actions/upload-artifact@v4.4.3
       with:
         name: merged-test-results.xml
         path: merged-test-results.xml
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4.4.3
       with:
         name: code-coverage
         path: coverage
