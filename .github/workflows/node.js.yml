@@ -34,7 +34,7 @@ jobs:
     - run: yarn
     - name: Run Tests
       run: |
-        npm yarn test
+        yarn test
         mkdir -p test-results/junit
         bin/junit-merge test-results.xml test/fixtures/3.xml
         cp test-results.xml test-results/junit/
@@ -61,4 +61,6 @@ jobs:
       uses: codecov/codecov-action@v4.6.0
       with:
         fail_ci_if_error: true
+        flags: ${{ matrix.node-version }}
+        name:  ${{ matrix.node-version }}
           
